@@ -1,27 +1,70 @@
-# NgxAnimator
+# ngx-animator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+This is simple animation collection to add to your angular project based on [Animate.css](https://animate.style/)
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
+npm install ngx-animator --save
+```
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+import module in your app module
 
-## Build
+```typescript
+import { NgxAnimatorModule } from 'ngx-animator';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+@NgModule({
+  declarations: ],
+  imports: [BrowserAnimationsModule, NgxAnimatorModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
 
-## Running unit tests
+you also need to have ```BrowserAnimationsModule``` imported before the ```NgxAnimatorModule``` module.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+in your component, import animations
 
-## Running end-to-end tests
+```typescript
+import { Component } from '@angular/core';
+import {
+  Bounce,
+  FadeInRight,
+  Flash,
+  HeadShake,
+  Pulse,
+  RubberBand,
+  ShakeX,
+  ShakeY,
+} from 'ngx-animator';
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    Bounce,
+    Flash,
+    Pulse,
+    RubberBand,
+    ShakeX,
+    ShakeY,
+    HeadShake,
+    FadeInRight,
+  ],
+})
+export class AppComponent {}
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+and use directive in HTML
+
+```html
+<div class="animation-cover">
+   <app-rocket bounce></app-rocket>
+   <p>Bounce</p>
+</div>
+```
