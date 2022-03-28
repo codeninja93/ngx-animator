@@ -1,24 +1,75 @@
-# NgxAnimator
+# ngx-animator
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+This is simple animation collection to add to your angular project based on [Animate.css](https://animate.style/)
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project ngx-animator` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-animator`.
-> Note: Don't forget to add `--project ngx-animator` or else it will be added to the default project in your `angular.json` file. 
+```bash
+npm install ngx-animator --save
+```
 
-## Build
+## Demo
 
-Run `ng build ngx-animator` to build the project. The build artifacts will be stored in the `dist/` directory.
+[Demo](http://pumped-pocket.surge.sh/)
 
-## Publishing
+## Usage
 
-After building your library with `ng build ngx-animator`, go to the dist folder `cd dist/ngx-animator` and run `npm publish`.
+import module in your app module
 
-## Running unit tests
+```typescript
+import { NgxAnimatorModule } from 'ngx-animator';
 
-Run `ng test ngx-animator` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  declarations: ],
+  imports: [BrowserAnimationsModule, NgxAnimatorModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
 
-## Further help
+you also need to have ```BrowserAnimationsModule``` imported before the ```NgxAnimatorModule``` module.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+in your component, import animations
+
+```typescript
+import { Component } from '@angular/core';
+import {
+  Bounce,
+  FadeInRight,
+  Flash,
+  HeadShake,
+  Pulse,
+  RubberBand,
+  ShakeX,
+  ShakeY,
+} from 'ngx-animator';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    Bounce,
+    Flash,
+    Pulse,
+    RubberBand,
+    ShakeX,
+    ShakeY,
+    HeadShake,
+    FadeInRight,
+  ],
+})
+export class AppComponent {}
+
+```
+
+and use directive in HTML
+
+```html
+<div class="animation-cover">
+   <app-rocket bounce></app-rocket>
+   <p>Bounce</p>
+</div>
+```
+
