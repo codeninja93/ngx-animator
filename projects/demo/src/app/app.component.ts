@@ -13,6 +13,7 @@ import {
   Swing,
   Tada,
   Wobble,
+  BounceIn
 } from 'projects/ngx-animator/src/public-api';
 
 const registerBounce = Bounce({ timeout: '1000ms' });
@@ -27,7 +28,7 @@ const RegisterTada = Tada({timeout: '1000ms', delay: '800ms'});
 const RegisterWobble = Wobble({timeout: '1000ms', delay: '900ms'});
 const RegisterJello = Jello({ timeout: '1000ms', easing: 'ease', delay: '1000ms' });
 const RegisterHeartBeat = HeartBeat({ timeout: '1000ms', delay: '1100ms' });
-const registerFadeInRight = FadeInRight({
+const registerBounceIn = BounceIn({
   timeout: '1000ms',
   delay: '1000ms',
   easing: 'linear',
@@ -45,12 +46,12 @@ const registerFadeInRight = FadeInRight({
     RegisterShakeX,
     RegisterShakeY,
     registerHeadShake,
-    registerFadeInRight,
     RegisterSwing,
     RegisterTada,
     RegisterWobble,
     RegisterJello,
     RegisterHeartBeat,
+    registerBounceIn,
   ],
 })
 export class AppComponent {}
