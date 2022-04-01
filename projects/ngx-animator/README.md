@@ -23,7 +23,7 @@ import {
   Bounce,
 } from 'ngx-animator';
 
-// Register Aniamtion
+// Register Animation
 const RegisterAnimation = Bounce({ timeout: '1200ms', delay: '100ms', easing: 'ease'});
 
 @Component({
