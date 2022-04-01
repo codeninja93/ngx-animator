@@ -8,52 +8,30 @@ This is simple animation collection to add to your angular project based on [Ani
 npm install ngx-animator --save
 ```
 
+## Demo
+
+[Demo](http://pumped-pocket.surge.sh/)
+
 ## Usage
 
-import module in your app module
-
-```typescript
-import { NgxAnimatorModule } from 'ngx-animator';
-
-@NgModule({
-  declarations: ],
-  imports: [BrowserAnimationsModule, NgxAnimatorModule],
-  providers: [],
-  bootstrap: [AppComponent],
-})
-export class AppModule {}
-```
-
-you also need to have ```BrowserAnimationsModule``` imported before the ```NgxAnimatorModule``` module.
+Make sure you have ```BrowserAnimationsModule``` added to your application module.
 
 in your component, import animations
 
 ```typescript
-import { Component } from '@angular/core';
 import {
   Bounce,
-  FadeInRight,
-  Flash,
-  HeadShake,
-  Pulse,
-  RubberBand,
-  ShakeX,
-  ShakeY,
 } from 'ngx-animator';
+
+// Register Aniamtion
+const RegisterAnimation = Bounce({ timeout: '1200ms', delay: '100ms', easing: 'ease'});
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    Bounce,
-    Flash,
-    Pulse,
-    RubberBand,
-    ShakeX,
-    ShakeY,
-    HeadShake,
-    FadeInRight,
+    RegisterAnimation // provide animation to component
   ],
 })
 export class AppComponent {}
@@ -64,7 +42,17 @@ and use directive in HTML
 
 ```html
 <div class="animation-cover">
-   <app-rocket bounce></app-rocket>
+   <app-rocket @bounce></app-rocket> <!-- Use animation in template -->
    <p>Bounce</p>
 </div>
+```
+
+Animation Params Interface
+
+```typescript
+interface AnimationParams {
+    timeout?: string;
+    delay?: string;
+    easing?: 'ease' | 'ease-in' | 'ease-out' | 'linear' | 'ease-in-out' | string
+}
 ```
