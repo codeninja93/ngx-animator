@@ -88,3 +88,19 @@ export * from './lib/animations/rotating-exit/rotateOutDownRight.animation';
 export * from './lib/animations/rotating-exit/rotateOutUpLeft.animation';
 export * from './lib/animations/rotating-exit/rotateOutUpRight.animation';
 
+export * from './lib/animations/specials/hinge.animation';
+export * from './lib/animations/specials/jackInTheBox.animation';
+export * from './lib/animations/specials/rollIn.animation';
+export * from './lib/animations/specials/rollOut.animation';
+
+export * from './lib/animations/zooming-enterance/zoomIn.animation';
+export * from './lib/animations/zooming-enterance/zoomInUp.animation';
+export * from './lib/animations/zooming-enterance/zoomInDown.animation';
+export * from './lib/animations/zooming-enterance/zoomInLeft.animation';
+export * from './lib/animations/zooming-enterance/zoomInRight.animation';
+
+export * from './lib/animations/zooming-exit/zoomOut.animation';
+export * from './lib/animations/zooming-exit/zoomOutUp.animation';
+export * from './lib/animations/zooming-exit/zoomOutDown.animation';
+export * from './lib/animations/zooming-exit/zoomOutLeft.animation';
+export * from './lib/animations/zooming-exit/zoomOutRight.animation';

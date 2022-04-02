@@ -7,30 +7,26 @@ import {
 } from '@angular/animations';
 import { AnimationParams } from '../../interface/animationParams';
 
-export function FlipOutY({
+export function ZoomOut({
   timeout = '350ms',
   delay = '0ms',
   easing = 'ease',
 }: AnimationParams) {
-  return trigger('flipOutY', [
+  return trigger('zoomOut', [
     transition(':leave', [
       animate(
         `${timeout} ${delay} ${easing}`,
         keyframes([
           style({
-            transform: 'perspective(400px)',
-            backfaceVisibility: 'visible',
+            opacity: 1,
             offset: 0,
           }),
           style({
-            transform: 'perspective(400px) rotateY(-15deg)',
-            backfaceVisibility: 'visible',
-            opacity: 1,
-            offset: 0.3,
+            transform: 'scale3d(0.3, 0.3, 0.3)',
+            opacity: 0,
+            offset: 0.5,
           }),
           style({
-            transform: 'perspective(400px) rotateY(90deg)',
-            backfaceVisibility: 'visible',
             opacity: 0,
             offset: 1,
           }),

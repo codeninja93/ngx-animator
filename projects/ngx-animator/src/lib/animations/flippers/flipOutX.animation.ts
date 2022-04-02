@@ -32,7 +32,7 @@ export function FlipOutX({
             transform: 'perspective(400px) rotateX(90deg)',
             backfaceVisibility: 'visible',
             opacity: 0,
-            offset: 0,
+            offset: 1,
           }),
         ])
       ),

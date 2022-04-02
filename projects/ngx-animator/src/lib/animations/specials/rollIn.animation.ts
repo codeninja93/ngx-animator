@@ -7,31 +7,24 @@ import {
 } from '@angular/animations';
 import { AnimationParams } from '../../interface/animationParams';
 
-export function FlipOutY({
+export function RollIn({
   timeout = '350ms',
   delay = '0ms',
   easing = 'ease',
 }: AnimationParams) {
-  return trigger('flipOutY', [
-    transition(':leave', [
+  return trigger('rollIn', [
+    transition(':enter', [
       animate(
         `${timeout} ${delay} ${easing}`,
         keyframes([
           style({
-            transform: 'perspective(400px)',
-            backfaceVisibility: 'visible',
+            transform: 'translate3d(-100%, 0, 0) rotate(-120deg)',
+            opacity: 0,
             offset: 0,
           }),
           style({
-            transform: 'perspective(400px) rotateY(-15deg)',
-            backfaceVisibility: 'visible',
+            transform: 'translateZ(0)',
             opacity: 1,
-            offset: 0.3,
-          }),
-          style({
-            transform: 'perspective(400px) rotateY(90deg)',
-            backfaceVisibility: 'visible',
-            opacity: 0,
             offset: 1,
           }),
         ])
